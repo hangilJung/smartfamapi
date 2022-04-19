@@ -16,8 +16,6 @@ router.post(
   ctrl.requestLocalServer.loadActuatorRecord
 );
 
-router.post("/emergency", ctrl.requestLocalServer.emergency);
-
 router.post("/token-v1", ctrl.process.tokenV1);
 router.post("/test", async (req, res) => {
   res.json(result.data);

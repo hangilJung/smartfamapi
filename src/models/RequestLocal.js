@@ -10,12 +10,9 @@ class RequestLocal {
     try {
       const result = await requestWithTokenAndData(`${url}`, data);
 
-      // const result = await axios.post(`${localServerHost}${url}`, data);
-
       return result.data;
     } catch (error) {
-      console.log(error);
-      return "err";
+      return "WoW!!! It is Error!";
     }
   }
 
