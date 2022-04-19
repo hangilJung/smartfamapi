@@ -9,7 +9,11 @@ const requestLocalServer = {
     const response = await requestLocal.loadSensorData();
     res.json(response);
   },
-
+  mainSensorData: async (req, res) => {
+    const requestLocal = new RequestLocal();
+    const response = await requestLocal.mainSensorData();
+    res.json(response);
+  },
   emergency: async (req, res) => {
     const requestLocal = new RequestLocal();
     const response = await requestLocal.emergency();

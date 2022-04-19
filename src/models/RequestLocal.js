@@ -58,6 +58,11 @@ class RequestLocal {
     return this.#localServerAccess(url, this.body);
   }
 
+  async mainSensorData() {
+    const url = urlList.main;
+
+    return this.#localServerAccess(url, this.body);
+  }
   async minutes() {
     const url = urlList.minutes;
 
