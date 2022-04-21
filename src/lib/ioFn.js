@@ -25,8 +25,26 @@ function timeSocketioConnection(time) {
     });
 
     setInterval(() => {
-      time.emit("time", tt());
+      socket.emit("time", tt());
     }, 1000);
+  });
+}
+
+function mainSensorDataConnection(a) {
+  a.on("connection", (socket) => {
+    console.log(socket.id);
+
+    socket.on("disconnet", (reason) => {
+      console.log(reason);
+    });
+
+    const list = ioList(a, socket);
+
+    socket.on("changeMainSensorData", (data) => {
+      console.log(data);
+      a.emit("main", data);
+    });
+    sentMessageToDeliverClient(list.mainSensorDataSpace.mainSensorData);
   });
 }
 
@@ -44,4 +62,8 @@ function findIpAddress(socket) {
   return { ip, auth: socket.handshake.auth, id: socket.id };
 }
 
-module.exports = { sensorConnection, timeSocketioConnection };
+module.exports = {
+  sensorConnection,
+  timeSocketioConnection,
+  mainSensorDataConnection,
+};

@@ -20,6 +20,14 @@ function list(sensor, socket) {
         sendMsg: "changeSensorData",
       },
     },
+    mainSensorDataSpace: {
+      mainSensorData: {
+        nameSpace: sensor,
+        socket,
+        sentMsg: "main",
+        sendMsg: "main",
+      },
+    },
   };
 
   return list;

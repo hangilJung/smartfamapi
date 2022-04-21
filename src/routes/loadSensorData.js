@@ -1,12 +1,13 @@
 const express = require("express");
 const router = express.Router();
 const ctrl = require("../controllers");
+const { ipAndUrl } = require("../lib/middleware");
 
-router.post("/", ctrl.requestLocalServer.loadSensorData);
-router.post("/minutes", ctrl.requestLocalServer.minutes);
-router.post("/hours", ctrl.requestLocalServer.hours);
-router.post("/days", ctrl.requestLocalServer.days);
-router.post("/months", ctrl.requestLocalServer.months);
-router.post("/years", ctrl.requestLocalServer.years);
-router.post("/main", ctrl.requestLocalServer.mainSensorData);
+router.post("/", ipAndUrl, ctrl.requestLocalServer.loadSensorData);
+router.post("/minutes", ipAndUrl, ctrl.requestLocalServer.minutes);
+router.post("/hours", ipAndUrl, ctrl.requestLocalServer.hours);
+router.post("/days", ipAndUrl, ctrl.requestLocalServer.days);
+router.post("/months", ipAndUrl, ctrl.requestLocalServer.months);
+router.post("/years", ipAndUrl, ctrl.requestLocalServer.years);
+router.post("/main", ipAndUrl, ctrl.requestLocalServer.mainSensorData);
 module.exports = router;
