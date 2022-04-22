@@ -69,6 +69,11 @@ const requestLocalServer = {
     const response = await requestLocal.years();
     res.json(response);
   },
+  update: async (req, res) => {
+    const requestLocal = new RequestLocal(req.body);
+    const response = await requestLocal.update();
+    res.json(response);
+  },
 };
 
 const process = {

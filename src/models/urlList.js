@@ -14,6 +14,7 @@ const url = {
   months: "/load-sensor-data/months",
   years: "/load-sensor-data/years",
   main: "/load-sensor-data/main",
+  update: "/update",
 };
 
 module.exports = url;

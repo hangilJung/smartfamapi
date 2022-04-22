@@ -91,6 +91,12 @@ class RequestLocal {
 
     return this.#localServerAccess(url, this.body);
   }
+
+  async update() {
+    const url = urlList.update;
+
+    return this.#localServerAccess(url, this.body);
+  }
 }
 
 module.exports = RequestLocal;

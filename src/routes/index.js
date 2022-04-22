@@ -16,6 +16,7 @@ router.post(
   ipAndUrl,
   ctrl.requestLocalServer.loadActuatorRecord
 );
+router.post("/update", ipAndUrl, ctrl.requestLocalServer.update);
 
 router.post("/token-v1", ipAndUrl, ctrl.process.tokenV1);
 
