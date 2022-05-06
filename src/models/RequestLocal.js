@@ -16,6 +16,15 @@ class RequestLocal {
     }
   }
 
+  async reRequestData() {
+    const { url, startDate, endDate } = this.body;
+    const data = { startDate, endDate };
+
+    console.log(`데이터들  ${url}, ${data}`);
+
+    return this.#localServerAccess(url, data);
+  }
+
   async loadSensorData() {
     const url = urlList.loadSensorData;
 
@@ -58,11 +67,18 @@ class RequestLocal {
     return this.#localServerAccess(url, this.body);
   }
 
-  async mainSensorData() {
-    const url = urlList.main;
+  async mainInsideSensorData() {
+    const url = urlList.mainInside;
 
     return this.#localServerAccess(url, this.body);
   }
+
+  async mainOutsideSensorData() {
+    const url = urlList.mainOutside;
+
+    return this.#localServerAccess(url, this.body);
+  }
+
   async minutes() {
     const url = urlList.minutes;
 
@@ -72,8 +88,11 @@ class RequestLocal {
   async hours() {
     const url = urlList.hours;
 
+    const result = await this.#localServerAccess(url, this.body);
+
     return this.#localServerAccess(url, this.body);
   }
+
   async months() {
     const url = urlList.months;
 
@@ -94,6 +113,12 @@ class RequestLocal {
 
   async update() {
     const url = urlList.update;
+
+    return this.#localServerAccess(url, this.body);
+  }
+
+  async loadNutrientData() {
+    const url = urlList.loadNutrientData;
 
     return this.#localServerAccess(url, this.body);
   }

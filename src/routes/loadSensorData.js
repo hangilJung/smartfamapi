@@ -9,5 +9,16 @@ router.post("/hours", ipAndUrl, ctrl.requestLocalServer.hours);
 router.post("/days", ipAndUrl, ctrl.requestLocalServer.days);
 router.post("/months", ipAndUrl, ctrl.requestLocalServer.months);
 router.post("/years", ipAndUrl, ctrl.requestLocalServer.years);
-router.post("/main", ipAndUrl, ctrl.requestLocalServer.mainSensorData);
+router.post(
+  "/main-inside",
+  ipAndUrl,
+  ctrl.requestLocalServer.mainInsideSensorData
+);
+router.post(
+  "/main-outside",
+  ipAndUrl,
+  ctrl.requestLocalServer.mainOutsideSensorData
+);
+router.get("/test", ctrl.requestLocalServer.reRequest);
+
 module.exports = router;

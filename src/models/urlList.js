@@ -13,8 +13,10 @@ const url = {
   days: "/load-sensor-data/days",
   months: "/load-sensor-data/months",
   years: "/load-sensor-data/years",
-  main: "/load-sensor-data/main",
+  mainInside: "/load-sensor-data/main-inside",
+  mainOutside: "/load-sensor-data/main-outside",
   update: "/update",
+  loadNutrientData: "/operate-actuator/load-nutrient-data",
 };
 
 module.exports = url;

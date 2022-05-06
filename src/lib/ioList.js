@@ -27,6 +27,12 @@ function list(sensor, socket) {
         sentMsg: "main",
         sendMsg: "main",
       },
+      showMeTheData: {
+        nameSpace: sensor,
+        socket,
+        sentMsg: "requestData",
+        sendMsg: "requestData",
+      },
     },
   };
 

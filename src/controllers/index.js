@@ -1,77 +1,146 @@
 const RequestLocal = require("../models/RequestLocal");
-const sensor = require("../utils/io");
-const ioFn = require("../lib/ioFn");
-const io = require("../utils/io");
+const fn = require("../lib/fn");
 
 const requestLocalServer = {
   loadSensorData: async (req, res) => {
     const requestLocal = new RequestLocal();
     const response = await requestLocal.loadSensorData();
-    res.json(response);
+    if (fn.tokenIsReissuance(response)) {
+      res.redirect(fn.urlAndData(req));
+    } else {
+      res.json(response);
+    }
   },
-  mainSensorData: async (req, res) => {
+  mainInsideSensorData: async (req, res) => {
     const requestLocal = new RequestLocal();
-    const response = await requestLocal.mainSensorData();
-    res.json(response);
+    const response = await requestLocal.mainInsideSensorData();
+    if (fn.tokenIsReissuance(response)) {
+      res.redirect(fn.urlAndData(req));
+    } else {
+      res.json(response);
+    }
+  },
+  mainOutsideSensorData: async (req, res) => {
+    const requestLocal = new RequestLocal();
+    const response = await requestLocal.mainOutsideSensorData();
+    if (fn.tokenIsReissuance(response)) {
+      res.redirect(fn.urlAndData(req));
+    } else {
+      res.json(response);
+    }
   },
   emergency: async (req, res) => {
     const requestLocal = new RequestLocal();
     const response = await requestLocal.emergency();
-    res.json(response);
+    if (fn.tokenIsReissuance(response)) {
+      res.redirect(fn.urlAndData(req));
+    } else {
+      res.json(response);
+    }
   },
   login: async (req, res) => {
     const requestLocal = new RequestLocal(req.body);
     const response = await requestLocal.login();
-    res.json(response);
+    if (fn.tokenIsReissuance(response)) {
+      res.redirect(fn.urlAndData(req));
+    } else {
+      res.json(response);
+    }
   },
   loadActuatorRecord: async (req, res) => {
     const requestLocal = new RequestLocal(req.body);
     const response = await requestLocal.loadActuatorRecord();
-    res.json(response);
+    if (fn.tokenIsReissuance(response)) {
+      res.redirect(fn.urlAndData(req));
+    } else {
+      res.json(response);
+    }
   },
   operateSimpleActuator: async (req, res) => {
     const requestLocal = new RequestLocal(req.body);
     const response = await requestLocal.operateSimpleActuator();
-    res.json(response);
+    if (fn.tokenIsReissuance(response)) {
+      res.redirect(fn.urlAndData(req));
+    } else {
+      res.json(response);
+    }
   },
   operateNutrientSupply: async (req, res) => {
     const requestLocal = new RequestLocal(req.body);
     const response = await requestLocal.operateNutrientActuator();
-    res.json(response);
+    if (fn.tokenIsReissuance(response)) {
+      res.redirect(fn.urlAndData(req));
+    } else {
+      res.json(response);
+    }
   },
   operateNutrientStop: async (req, res) => {
     const requestLocal = new RequestLocal(req.body);
     const response = await requestLocal.operateNutrientStop();
-    res.json(response);
+    if (fn.tokenIsReissuance(response)) {
+      res.redirect(fn.urlAndData(req));
+    } else {
+      res.json(response);
+    }
   },
   minutes: async (req, res) => {
     const requestLocal = new RequestLocal(req.body);
     const response = await requestLocal.minutes();
-    res.json(response);
+    if (fn.tokenIsReissuance(response)) {
+      res.redirect(fn.urlAndData(req));
+    } else {
+      res.json(response);
+    }
   },
   days: async (req, res) => {
     const requestLocal = new RequestLocal(req.body);
     const response = await requestLocal.days();
-    res.json(response);
+    if (fn.tokenIsReissuance(response)) {
+      res.redirect(fn.urlAndData(req));
+    } else {
+      res.json(response);
+    }
   },
   hours: async (req, res) => {
     const requestLocal = new RequestLocal(req.body);
     const response = await requestLocal.hours();
-    res.json(response);
+    if (fn.tokenIsReissuance(response)) {
+      res.redirect(fn.urlAndData(req));
+    } else {
+      res.json(response);
+    }
   },
   months: async (req, res) => {
     const requestLocal = new RequestLocal(req.body);
     const response = await requestLocal.months();
-    res.json(response);
+    if (fn.tokenIsReissuance(response)) {
+      res.redirect(fn.urlAndData(req));
+    } else {
+      res.json(response);
+    }
   },
   years: async (req, res) => {
     const requestLocal = new RequestLocal(req.body);
     const response = await requestLocal.years();
-    res.json(response);
+    if (fn.tokenIsReissuance(response)) {
+      res.redirect(fn.urlAndData(req));
+    } else {
+      res.json(response);
+    }
   },
   update: async (req, res) => {
     const requestLocal = new RequestLocal(req.body);
     const response = await requestLocal.update();
+    res.json(response);
+  },
+  loadNutrientData: async (req, res) => {
+    const requestLocal = new RequestLocal(req.body);
+    const response = await requestLocal.loadNutrientData();
+    res.json(response);
+  },
+  reRequest: async (req, res) => {
+    const requestLocal = new RequestLocal(req.query);
+    const response = await requestLocal.reRequestData();
     res.json(response);
   },
 };

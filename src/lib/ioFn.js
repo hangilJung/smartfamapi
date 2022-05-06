@@ -41,10 +41,10 @@ function mainSensorDataConnection(a) {
     const list = ioList(a, socket);
 
     socket.on("changeMainSensorData", (data) => {
-      console.log(data);
       a.emit("main", data);
     });
     sentMessageToDeliverClient(list.mainSensorDataSpace.mainSensorData);
+    sentMessageToDeliverClient(list.mainSensorDataSpace.showMeTheData);
   });
 }
 
