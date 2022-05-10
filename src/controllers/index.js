@@ -136,12 +136,25 @@ const requestLocalServer = {
   loadNutrientData: async (req, res) => {
     const requestLocal = new RequestLocal(req.body);
     const response = await requestLocal.loadNutrientData();
-    res.json(response);
+    if (fn.tokenIsReissuance(response)) {
+      res.redirect(fn.urlAndData(req));
+    } else {
+      res.json(response);
+    }
   },
   reRequest: async (req, res) => {
     const requestLocal = new RequestLocal(req.query);
     const response = await requestLocal.reRequestData();
     res.json(response);
+  },
+  bedData: async (req, res) => {
+    const requestLocal = new RequestLocal(req.query);
+    const response = await requestLocal.readBedData();
+    if (fn.tokenIsReissuance(response)) {
+      res.redirect(fn.urlAndData(req));
+    } else {
+      res.json(response);
+    }
   },
 };
 

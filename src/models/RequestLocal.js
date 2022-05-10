@@ -122,6 +122,12 @@ class RequestLocal {
 
     return this.#localServerAccess(url, this.body);
   }
+
+  async readBedData() {
+    const url = urlList.bedData;
+
+    return this.#localServerAccess(url, this.body);
+  }
 }
 
 module.exports = RequestLocal;

@@ -17,6 +17,7 @@ const url = {
   mainOutside: "/load-sensor-data/main-outside",
   update: "/update",
   loadNutrientData: "/operate-actuator/load-nutrient-data",
+  bedData: "/load-sensor-data/bed-data",
 };
 
 module.exports = url;

@@ -19,6 +19,7 @@ router.post(
   ipAndUrl,
   ctrl.requestLocalServer.mainOutsideSensorData
 );
+router.post("/bed-data", ipAndUrl, ctrl.requestLocalServer.bedData);
 router.get("/test", ctrl.requestLocalServer.reRequest);
 
 module.exports = router;
