@@ -59,8 +59,9 @@ const requestLocalServer = {
   operateSimpleActuator: async (req, res) => {
     const requestLocal = new RequestLocal(req.body);
     const response = await requestLocal.operateSimpleActuator();
+
     if (fn.tokenIsReissuance(response)) {
-      res.redirect(fn.urlAndData(req));
+      res.redirect(fn.simpleUrlAndData(req));
     } else {
       res.json(response);
     }
@@ -68,6 +69,7 @@ const requestLocalServer = {
   operateNutrientSupply: async (req, res) => {
     const requestLocal = new RequestLocal(req.body);
     const response = await requestLocal.operateNutrientActuator();
+
     if (fn.tokenIsReissuance(response)) {
       res.redirect(fn.urlAndData(req));
     } else {
@@ -77,6 +79,7 @@ const requestLocalServer = {
   operateNutrientStop: async (req, res) => {
     const requestLocal = new RequestLocal(req.body);
     const response = await requestLocal.operateNutrientStop();
+
     if (fn.tokenIsReissuance(response)) {
       res.redirect(fn.urlAndData(req));
     } else {
@@ -86,6 +89,7 @@ const requestLocalServer = {
   minutes: async (req, res) => {
     const requestLocal = new RequestLocal(req.body);
     const response = await requestLocal.minutes();
+
     if (fn.tokenIsReissuance(response)) {
       res.redirect(fn.urlAndData(req));
     } else {
@@ -95,6 +99,7 @@ const requestLocalServer = {
   days: async (req, res) => {
     const requestLocal = new RequestLocal(req.body);
     const response = await requestLocal.days();
+
     if (fn.tokenIsReissuance(response)) {
       res.redirect(fn.urlAndData(req));
     } else {
@@ -104,6 +109,7 @@ const requestLocalServer = {
   hours: async (req, res) => {
     const requestLocal = new RequestLocal(req.body);
     const response = await requestLocal.hours();
+
     if (fn.tokenIsReissuance(response)) {
       res.redirect(fn.urlAndData(req));
     } else {
@@ -113,6 +119,7 @@ const requestLocalServer = {
   months: async (req, res) => {
     const requestLocal = new RequestLocal(req.body);
     const response = await requestLocal.months();
+
     if (fn.tokenIsReissuance(response)) {
       res.redirect(fn.urlAndData(req));
     } else {
@@ -122,6 +129,7 @@ const requestLocalServer = {
   years: async (req, res) => {
     const requestLocal = new RequestLocal(req.body);
     const response = await requestLocal.years();
+
     if (fn.tokenIsReissuance(response)) {
       res.redirect(fn.urlAndData(req));
     } else {
@@ -136,6 +144,7 @@ const requestLocalServer = {
   loadNutrientData: async (req, res) => {
     const requestLocal = new RequestLocal(req.body);
     const response = await requestLocal.loadNutrientData();
+
     if (fn.tokenIsReissuance(response)) {
       res.redirect(fn.urlAndData(req));
     } else {
@@ -145,6 +154,11 @@ const requestLocalServer = {
   reRequest: async (req, res) => {
     const requestLocal = new RequestLocal(req.query);
     const response = await requestLocal.reRequestData();
+    res.json(response);
+  },
+  reRequestSimple: async (req, res) => {
+    const requestLocal = new RequestLocal(req.query);
+    const response = await requestLocal.reRequestSimple();
     res.json(response);
   },
   bedData: async (req, res) => {

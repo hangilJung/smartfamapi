@@ -12,7 +12,15 @@ function urlAndData(req) {
     4
   )}&startDate=${req.body.startDate}&endDate=${req.body.endDate}`;
 }
+
+function simpleUrlAndData(req) {
+  return `/api/re-request/simple?url=${req.originalUrl.substring(
+    4
+  )}&deviceName=${req.body.deviceName}&active=${req.body.active}`;
+}
+
 module.exports = {
   tokenIsReissuance,
   urlAndData,
+  simpleUrlAndData,
 };

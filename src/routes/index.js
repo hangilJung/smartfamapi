@@ -4,10 +4,12 @@ const ctrl = require("../controllers");
 const { verifyToken } = require("../lib/middleware");
 const loadSensorData = require("./loadSensorData");
 const actuator = require("./actuator");
+const reRequest = require("./reRequest");
 const { ipAndUrl } = require("../lib/middleware");
 
 router.use("/load-sensor-data", loadSensorData);
 router.use("/operate-actuator", actuator);
+router.use("/re-request", reRequest);
 
 router.post("/emergency", ipAndUrl, ctrl.requestLocalServer.emergency);
 router.post("/losgin", ipAndUrl, ctrl.requestLocalServer.login);

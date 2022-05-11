@@ -25,6 +25,13 @@ class RequestLocal {
     return this.#localServerAccess(url, data);
   }
 
+  async reRequestSimple() {
+    const { url, deviceName, active } = this.body;
+    const data = { deviceName, active };
+
+    return this.#localServerAccess(url, data);
+  }
+
   async loadSensorData() {
     const url = urlList.loadSensorData;
 
