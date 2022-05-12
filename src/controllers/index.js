@@ -170,6 +170,18 @@ const requestLocalServer = {
       res.json(response);
     }
   },
+  start: async (req, res) => {
+    const requestLocal = new RequestLocal(req.query);
+    const response = await requestLocal.start();
+
+    res.json(response);
+  },
+  stop: async (req, res) => {
+    const requestLocal = new RequestLocal(req.query);
+    const response = await requestLocal.stop();
+
+    res.json(response);
+  },
 };
 
 const process = {

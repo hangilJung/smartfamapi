@@ -135,6 +135,18 @@ class RequestLocal {
 
     return this.#localServerAccess(url, this.body);
   }
+
+  async start() {
+    const url = urlList.start;
+
+    return this.#localServerAccess(url, this.body);
+  }
+
+  async stop() {
+    const url = urlList.stop;
+
+    return this.#localServerAccess(url, this.body);
+  }
 }
 
 module.exports = RequestLocal;
