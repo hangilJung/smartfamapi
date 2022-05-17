@@ -182,6 +182,86 @@ const requestLocalServer = {
 
     res.json(response);
   },
+  nutricultureMachineStatus: async (req, res) => {
+    const requestLocal = new RequestLocal();
+    const response = await requestLocal.nutriculatureMachineStatus();
+
+    if (fn.tokenIsReissuance(response)) {
+      res.redirect(fn.urlAndData(req));
+    } else {
+      res.json(response);
+    }
+  },
+  easySelection: async (req, res) => {
+    const requestLocal = new RequestLocal();
+    const response = await requestLocal.easySelection();
+
+    if (fn.tokenIsReissuance(response)) {
+      res.redirect(fn.urlAndData(req));
+    } else {
+      res.json(response);
+    }
+  },
+  detailSelection: async (req, res) => {
+    const requestLocal = new RequestLocal();
+    const response = await requestLocal.detailSelection();
+
+    if (fn.tokenIsReissuance(response)) {
+      res.redirect(fn.urlAndData(req));
+    } else {
+      res.json(response);
+    }
+  },
+  easySetting: async (req, res) => {
+    const requestLocal = new RequestLocal(req.body);
+    const response = await requestLocal.easySetting();
+
+    if (fn.tokenIsReissuance(response)) {
+      res.redirect(fn.urlAndData(req));
+    } else {
+      res.json(response);
+    }
+  },
+  detailSettingTime: async (req, res) => {
+    const requestLocal = new RequestLocal(req.body);
+    const response = await requestLocal.detailSettingTime();
+
+    if (fn.tokenIsReissuance(response)) {
+      res.redirect(fn.urlAndData(req));
+    } else {
+      res.json(response);
+    }
+  },
+  detailSettingMatter: async (req, res) => {
+    const requestLocal = new RequestLocal(req.body);
+    const response = await requestLocal.detailSettingMatter();
+
+    if (fn.tokenIsReissuance(response)) {
+      res.redirect(fn.urlAndData(req));
+    } else {
+      res.json(response);
+    }
+  },
+  detailSettingIsUse: async (req, res) => {
+    const requestLocal = new RequestLocal(req.body);
+    const response = await requestLocal.detailSettingIsUse();
+
+    if (fn.tokenIsReissuance(response)) {
+      res.redirect(fn.urlAndData(req));
+    } else {
+      res.json(response);
+    }
+  },
+  detailSettingTrayIsUse: async (req, res) => {
+    const requestLocal = new RequestLocal(req.body);
+    const response = await requestLocal.detailSettingTrayIsUse();
+
+    if (fn.tokenIsReissuance(response)) {
+      res.redirect(fn.urlAndData(req));
+    } else {
+      res.json(response);
+    }
+  },
 };
 
 const process = {

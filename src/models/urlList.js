@@ -20,6 +20,14 @@ const url = {
   bedData: "/load-sensor-data/bed-data",
   start: "/operate-actuator/start",
   stop: "/operate-actuator/stop",
+  nutricultureMachineStatus: "/operate-actuator/nutriculture-machine-status",
+  easySelection: "/operate-actuator/control-mode-easy",
+  detailSelection: "/operate-actuator/control-mode-detail",
+  easySetting: "/operate-actuator/easy-setting",
+  detailSettingTime: "/operate-actuator/detail-setting-time",
+  detailSettingMatter: "/operate-actuator/detail-setting-matter",
+  detailSettingIsUse: "/operate-actuator/detail-setting-is-use",
+  detailSettingTrayIsUse: "operate-actuator/detail-setting-tray-is-use",
 };
 
 module.exports = url;

@@ -19,6 +19,10 @@ function simpleUrlAndData(req) {
   )}&deviceName=${req.body.deviceName}&active=${req.body.active}`;
 }
 
+function test(req) {
+  return `/api/load-sensor-data/test?url=${req.originalUrl.substring(4)}`;
+}
+
 module.exports = {
   tokenIsReissuance,
   urlAndData,

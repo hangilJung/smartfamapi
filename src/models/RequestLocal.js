@@ -95,8 +95,6 @@ class RequestLocal {
   async hours() {
     const url = urlList.hours;
 
-    const result = await this.#localServerAccess(url, this.body);
-
     return this.#localServerAccess(url, this.body);
   }
 
@@ -144,6 +142,54 @@ class RequestLocal {
 
   async stop() {
     const url = urlList.stop;
+
+    return this.#localServerAccess(url, this.body);
+  }
+
+  async nutriculatureMachineStatus() {
+    const url = urlList.nutricultureMachineStatus;
+
+    return this.#localServerAccess(url, this.body);
+  }
+
+  async easySelection() {
+    const url = urlList.easySelection;
+
+    return this.#localServerAccess(url, this.body);
+  }
+
+  async detailSelection() {
+    const url = urlList.detailSelection;
+
+    return this.#localServerAccess(url, this.body);
+  }
+
+  async easySetting() {
+    const url = urlList.easySetting;
+
+    return this.#localServerAccess(url, this.body);
+  }
+
+  async detailSettingTime() {
+    const url = urlList.detailSettingTime;
+
+    return this.#localServerAccess(url, this.body);
+  }
+
+  async detailSettingMatter() {
+    const url = urlList.detailSettingMatter;
+
+    return this.#localServerAccess(url, this.body);
+  }
+
+  async detailSettingIsUse() {
+    const url = urlList.detailSettingIsUse;
+
+    return this.#localServerAccess(url, this.body);
+  }
+
+  async detailSettingTrayIsUse() {
+    const url = urlList.detailSettingTrayIsUse;
 
     return this.#localServerAccess(url, this.body);
   }
