@@ -48,6 +48,25 @@ function mainSensorDataConnection(a) {
   });
 }
 
+function nutrientData(a) {
+  a.on("connection", (socket) => {
+    console.log(socket.id);
+
+    socket.on("disconnet", (reason) => {
+      console.log(reason);
+    });
+
+    const list = ioList(a, socket);
+
+    sentMessageToDeliverClient(
+      list.nutrientData.requestNutricultureMachinePageData
+    );
+    sentMessageToDeliverClient(
+      list.nutrientData.getNutricultureMachinePageData
+    );
+  });
+}
+
 function sentMessageToDeliverClient(list) {
   list["socket"].on(list.sentMsg, (data) => {
     console.log(data);
@@ -66,4 +85,5 @@ module.exports = {
   sensorConnection,
   timeSocketioConnection,
   mainSensorDataConnection,
+  nutrientData,
 };

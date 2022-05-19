@@ -34,6 +34,20 @@ function list(sensor, socket) {
         sendMsg: "requestData",
       },
     },
+    nutrientData: {
+      requestNutricultureMachinePageData: {
+        nameSpace: sensor,
+        socket,
+        sentMsg: "requestNutrientData",
+        sendMsg: "requestNutrientData",
+      },
+      getNutricultureMachinePageData: {
+        nameSpace: sensor,
+        socket,
+        sentMsg: "getNutrientData",
+        sendMsg: "getNutrientData",
+      },
+    },
   };
 
   return list;

@@ -13,6 +13,7 @@ module.exports = (server) => {
   const sensor = io.of("/load-sensor-data");
   const time = io.of("/time");
   const mainSensorData = io.of("/main");
+  const nutrientData = io.of("/nutrient-data");
 
   sensor.use((socket, next) => {
     socketIOVerifyToken(socket, next);
@@ -21,4 +22,5 @@ module.exports = (server) => {
   ioFn.sensorConnection(sensor);
   ioFn.timeSocketioConnection(time);
   ioFn.mainSensorDataConnection(mainSensorData);
+  ioFn.nutrientData(nutrientData);
 };
