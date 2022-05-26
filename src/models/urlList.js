@@ -27,7 +27,11 @@ const url = {
   detailSettingTime: "/operate-actuator/detail-setting-time",
   detailSettingMatter: "/operate-actuator/detail-setting-matter",
   detailSettingIsUse: "/operate-actuator/detail-setting-is-use",
-  detailSettingTrayIsUse: "operate-actuator/detail-setting-tray-is-use",
+  detailSettingTrayIsUse: "/operate-actuator/detail-setting-tray-is-use",
+  hourConsumptionData: "/load-sensor-data/hour-consum",
+  dayConsumptionData: "/load-sensor-data/day-consum",
+  monthConsumptionData: "/load-sensor-data/month-consum",
+  yearConsumptionData: "/load-sensor-data/year-consum",
 };
 
 module.exports = url;

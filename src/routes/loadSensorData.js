@@ -20,6 +20,27 @@ router.post(
   ctrl.requestLocalServer.mainOutsideSensorData
 );
 router.post("/bed-data", ipAndUrl, ctrl.requestLocalServer.bedData);
+router.post(
+  "/hour-consum",
+  ipAndUrl,
+  ctrl.requestLocalServer.hourConsumptionData
+);
+router.post(
+  "/day-consum",
+  ipAndUrl,
+  ctrl.requestLocalServer.dayConsumptionData
+);
+router.post(
+  "/month-consum",
+  ipAndUrl,
+  ctrl.requestLocalServer.monthConsumptionData
+);
+router.post(
+  "/year-consum",
+  ipAndUrl,
+  ctrl.requestLocalServer.yearConsumptionData
+);
+
 router.get("/test", ctrl.requestLocalServer.reRequest);
 
 module.exports = router;

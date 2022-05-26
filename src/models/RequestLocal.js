@@ -193,6 +193,30 @@ class RequestLocal {
 
     return this.#localServerAccess(url, this.body);
   }
+
+  async hourConsumptionData() {
+    const url = urlList.hourConsumptionData;
+
+    return this.#localServerAccess(url, this.body);
+  }
+
+  async dayConsumptionData() {
+    const url = urlList.dayConsumptionData;
+
+    return this.#localServerAccess(url, this.body);
+  }
+
+  async monthConsumptionData() {
+    const url = urlList.monthConsumptionData;
+
+    return this.#localServerAccess(url, this.body);
+  }
+
+  async yearConsumptionData() {
+    const url = urlList.yearConsumptionData;
+
+    return this.#localServerAccess(url, this.body);
+  }
 }
 
 module.exports = RequestLocal;

@@ -68,8 +68,8 @@ function nutrientData(a) {
 }
 
 function sentMessageToDeliverClient(list) {
-  list["socket"].on(list.sentMsg, (data) => {
-    console.log(data);
+  list["socket"].on(list.sentMsg, async (data) => {
+    console.log(list.sentMsg, data);
     list["nameSpace"].emit(list.sendMsg, data);
   });
 }

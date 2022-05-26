@@ -262,6 +262,26 @@ const requestLocalServer = {
       res.json(response);
     }
   },
+  hourConsumptionData: async (req, res) => {
+    const requestLocal = new RequestLocal();
+    const response = await requestLocal.hourConsumptionData();
+    res.json(response);
+  },
+  dayConsumptionData: async (req, res) => {
+    const requestLocal = new RequestLocal();
+    const response = await requestLocal.dayConsumptionData();
+    res.json(response);
+  },
+  monthConsumptionData: async (req, res) => {
+    const requestLocal = new RequestLocal();
+    const response = await requestLocal.monthConsumptionData();
+    res.json(response);
+  },
+  yearConsumptionData: async (req, res) => {
+    const requestLocal = new RequestLocal();
+    const response = await requestLocal.yearConsumptionData();
+    res.json(response);
+  },
 };
 
 const process = {
