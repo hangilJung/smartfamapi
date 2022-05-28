@@ -1,6 +1,4 @@
 const SocketIO = require("socket.io");
-const ioFn = require("../lib/ioFn");
-const { socketIOVerifyToken } = require("../lib/middleware");
 
 module.exports = (server) => {
   const io = SocketIO(server, {
@@ -14,38 +12,100 @@ module.exports = (server) => {
   const time = io.of("/time");
   const mainSensorData = io.of("/main");
   const nutrientData = io.of("/nutrient-data");
-  const controlMode = io.of("/control-mode");
-  const easySetting = io.of("/easy-setting");
-  const detail1 = io.of("/detail-setting-1");
-  const detail2 = io.of("/detail-setting-2");
-  const detail3 = io.of("/detail-setting-3");
-  const detail4 = io.of("/detail-setting-4");
-  const detail5 = io.of("/detail-setting-5");
-  const detail6 = io.of("/detail-setting-6");
-  const detail7 = io.of("/detail-setting-7");
-  const detail8 = io.of("/detail-setting-8");
-  const detail9 = io.of("/detail-setting-9");
-  const detail10 = io.of("/detail-setting-10");
-  const detail11 = io.of("/detail-setting-11");
-  const detail12 = io.of("/detail-setting-12");
-  const detail13 = io.of("/detail-setting-13");
-  const detail14 = io.of("/detail-setting-14");
-  const detail15 = io.of("/detail-setting-15");
-  const detail16 = io.of("/detail-setting-16");
-  const detail17 = io.of("/detail-setting-17");
-  const detail18 = io.of("/detail-setting-18");
-  const detail19 = io.of("/detail-setting-19");
-  const detail20 = io.of("/detail-setting-20");
-  const detail21 = io.of("/detail-setting-21");
-  const detail22 = io.of("/detail-setting-22");
-  const detail23 = io.of("/detail-setting-23");
 
-  sensor.use((socket, next) => {
-    socketIOVerifyToken(socket, next);
+  const nutricultureMachinePage = io.of("/nutriculture-machine-page");
+
+  nutricultureMachinePage.on("connection", (socket) => {
+    console.log(socket.id);
+    socket.on("controlMode", (data) => {
+      console.log(data);
+      nutricultureMachinePage.emit("controlMode", data);
+    });
+    socket.on("easySetting", (data) => {
+      nutricultureMachinePage.emit("easySetting", data);
+    });
+    socket.on("detailSetting1", (data) => {
+      console.log(data);
+      nutricultureMachinePage.emit("detailSetting1", data);
+    });
+    socket.on("detailSetting2", (data) => {
+      nutricultureMachinePage.emit("detailSetting2", data);
+    });
+    socket.on("detailSetting3", (data) => {
+      nutricultureMachinePage.emit("detailSetting3", data);
+    });
+    socket.on("detailSetting4", (data) => {
+      nutricultureMachinePage.emit("detailSetting4", data);
+    });
+    socket.on("detailSetting5", (data) => {
+      nutricultureMachinePage.emit("detailSetting5", data);
+    });
+    socket.on("detailSetting6", (data) => {
+      nutricultureMachinePage.emit("detailSetting6", data);
+    });
+    socket.on("detailSetting7", (data) => {
+      nutricultureMachinePage.emit("detailSetting7", data);
+    });
+    socket.on("detailSetting8", (data) => {
+      nutricultureMachinePage.emit("detailSetting8", data);
+    });
+    socket.on("detailSetting9", (data) => {
+      nutricultureMachinePage.emit("detailSetting9", data);
+    });
+    socket.on("detailSetting10", (data) => {
+      nutricultureMachinePage.emit("detailSetting10", data);
+    });
+    socket.on("detailSetting11", (data) => {
+      nutricultureMachinePage.emit("detailSetting11", data);
+    });
+    socket.on("detailSetting12", (data) => {
+      nutricultureMachinePage.emit("detailSetting12", data);
+    });
+    socket.on("detailSetting13", (data) => {
+      nutricultureMachinePage.emit("detailSetting13", data);
+    });
+    socket.on("detailSetting14", (data) => {
+      nutricultureMachinePage.emit("detailSetting14", data);
+    });
+    socket.on("detailSetting15", (data) => {
+      nutricultureMachinePage.emit("detailSetting15", data);
+    });
+    socket.on("detailSetting16", (data) => {
+      nutricultureMachinePage.emit("detailSetting16", data);
+    });
+    socket.on("detailSetting17", (data) => {
+      nutricultureMachinePage.emit("detailSetting17", data);
+    });
+    socket.on("detailSetting18", (data) => {
+      nutricultureMachinePage.emit("detailSetting18", data);
+    });
+    socket.on("detailSetting19", (data) => {
+      nutricultureMachinePage.emit("detailSetting19", data);
+    });
+    socket.on("detailSetting20", (data) => {
+      nutricultureMachinePage.emit("detailSetting20", data);
+    });
+    socket.on("detailSetting21", (data) => {
+      nutricultureMachinePage.emit("detailSetting21", data);
+    });
+    socket.on("detailSetting22", (data) => {
+      nutricultureMachinePage.emit("detailSetting22", data);
+    });
+    socket.on("detailSetting23", (data) => {
+      nutricultureMachinePage.emit("detailSetting23", data);
+    });
+    socket.on("todaySupply", (data) => {
+      nutricultureMachinePage.emit("todaySupply", data);
+    });
+    socket.on("insideSensorData", (data) => {
+      nutricultureMachinePage.emit("insideSensorData", data);
+    });
+    socket.on("outsideSensorData", (data) => {
+      nutricultureMachinePage.emit("outsideSensorData", data);
+    });
+
+    socket.on("disconnet", (reason) => {
+      console.log(reason);
+    });
   });
-
-  ioFn.sensorConnection(sensor);
-  ioFn.timeSocketioConnection(time);
-  ioFn.mainSensorDataConnection(mainSensorData);
-  ioFn.nutrientData(nutrientData);
 };
