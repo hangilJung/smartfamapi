@@ -217,6 +217,31 @@ class RequestLocal {
 
     return this.#localServerAccess(url, this.body);
   }
+  async sensorDataMinutely() {
+    const url = urlList.sensorDataMinutely;
+
+    return this.#localServerAccess(url, this.body);
+  }
+  async sensorDataHourly() {
+    const url = urlList.sensorDataHourly;
+
+    return this.#localServerAccess(url, this.body);
+  }
+  async sensorDataDaily() {
+    const url = urlList.sensorDataDaily;
+
+    return this.#localServerAccess(url, this.body);
+  }
+  async sensorDataMonthly() {
+    const url = urlList.sensorDataMonthly;
+
+    return this.#localServerAccess(url, this.body);
+  }
+  async sensorDataYearly() {
+    const url = urlList.sensorDataYearly;
+
+    return this.#localServerAccess(url, this.body);
+  }
 }
 
 module.exports = RequestLocal;

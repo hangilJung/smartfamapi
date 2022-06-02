@@ -32,6 +32,11 @@ const url = {
   dayConsumptionData: "/load-sensor-data/day-consum",
   monthConsumptionData: "/load-sensor-data/month-consum",
   yearConsumptionData: "/load-sensor-data/year-consum",
+  sensorDataMinutely: "/load-sensor-data/minutely",
+  sensorDataHourly: "/load-sensor-data/hourly",
+  sensorDataDaily: "/load-sensor-data/daily",
+  sensorDataMonthly: "/load-sensor-data/monthly",
+  sensorDataYearly: "/load-sensor-data/yearly",
 };
 
 module.exports = url;

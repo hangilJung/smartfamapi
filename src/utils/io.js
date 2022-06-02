@@ -10,7 +10,7 @@ module.exports = (server) => {
 
   const sensor = io.of("/load-sensor-data");
   const time = io.of("/time");
-  const mainSensorData = io.of("/main");
+
   const nutrientData = io.of("/nutrient-data");
 
   const nutricultureMachinePage = io.of("/nutriculture-machine-page");
@@ -102,6 +102,26 @@ module.exports = (server) => {
     });
     socket.on("outsideSensorData", (data) => {
       nutricultureMachinePage.emit("outsideSensorData", data);
+    });
+
+    socket.on("disconnet", (reason) => {
+      console.log(reason);
+    });
+  });
+
+  const mainSensorData = io.of("/main");
+
+  mainSensorData.on("connection", (socket) => {
+    console.log(socket.id);
+
+    socket.on("insideSensorData", (data) => {
+      console.log(data);
+      mainSensorData.emit("insideSensorData", data);
+    });
+
+    socket.on("outsideSensorData", (data) => {
+      console.log(data);
+      mainSensorData.emit("outsideSensorData", data);
     });
 
     socket.on("disconnet", (reason) => {

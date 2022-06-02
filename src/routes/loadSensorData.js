@@ -6,9 +6,7 @@ const { ipAndUrl } = require("../lib/middleware");
 router.post("/", ipAndUrl, ctrl.requestLocalServer.loadSensorData);
 router.post("/minutes", ipAndUrl, ctrl.requestLocalServer.minutes);
 router.post("/hours", ipAndUrl, ctrl.requestLocalServer.hours);
-router.post("/days", ipAndUrl, ctrl.requestLocalServer.days);
-router.post("/months", ipAndUrl, ctrl.requestLocalServer.months);
-router.post("/years", ipAndUrl, ctrl.requestLocalServer.years);
+
 router.post(
   "/main-inside",
   ipAndUrl,
@@ -40,6 +38,12 @@ router.post(
   ipAndUrl,
   ctrl.requestLocalServer.yearConsumptionData
 );
+
+router.post("/minutely", ipAndUrl, ctrl.requestLocalServer.minutely);
+router.post("/hourly", ipAndUrl, ctrl.requestLocalServer.hourly);
+router.post("/daily", ipAndUrl, ctrl.requestLocalServer.daily);
+router.post("/monthly", ipAndUrl, ctrl.requestLocalServer.monthly);
+router.post("/yearly", ipAndUrl, ctrl.requestLocalServer.yearly);
 
 router.get("/test", ctrl.requestLocalServer.reRequest);
 
