@@ -1,7 +1,6 @@
 const express = require("express");
 const router = express.Router();
 const ctrl = require("../controllers");
-const { verifyToken } = require("../lib/middleware");
 const loadSensorData = require("./loadSensorData");
 const actuator = require("./actuator");
 const reRequest = require("./reRequest");

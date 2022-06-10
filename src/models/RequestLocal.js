@@ -134,20 +134,20 @@ class RequestLocal {
     return this.#localServerAccess(url, this.body);
   }
 
-  async start() {
-    const url = urlList.start;
-
-    return this.#localServerAccess(url, this.body);
-  }
-
-  async stop() {
-    const url = urlList.stop;
+  async irrigation() {
+    const url = urlList.irrigation;
 
     return this.#localServerAccess(url, this.body);
   }
 
   async nutriculatureMachineStatus() {
     const url = urlList.nutricultureMachineStatus;
+
+    return this.#localServerAccess(url, this.body);
+  }
+
+  async controlMode() {
+    const url = urlList.controlMode;
 
     return this.#localServerAccess(url, this.body);
   }
@@ -214,6 +214,12 @@ class RequestLocal {
 
   async yearConsumptionData() {
     const url = urlList.yearConsumptionData;
+
+    return this.#localServerAccess(url, this.body);
+  }
+
+  async accumulateConsumptionData() {
+    const url = urlList.accumulateConsumptionData;
 
     return this.#localServerAccess(url, this.body);
   }

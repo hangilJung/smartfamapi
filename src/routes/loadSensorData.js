@@ -38,6 +38,11 @@ router.post(
   ipAndUrl,
   ctrl.requestLocalServer.yearConsumptionData
 );
+router.post(
+  "/accum-consum",
+  ipAndUrl,
+  ctrl.requestLocalServer.accumulateConsumptionData
+);
 
 router.post("/minutely", ipAndUrl, ctrl.requestLocalServer.minutely);
 router.post("/hourly", ipAndUrl, ctrl.requestLocalServer.hourly);

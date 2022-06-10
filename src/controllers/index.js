@@ -170,15 +170,9 @@ const requestLocalServer = {
       res.json(response);
     }
   },
-  start: async (req, res) => {
-    const requestLocal = new RequestLocal(req.query);
-    const response = await requestLocal.start();
-
-    res.json(response);
-  },
-  stop: async (req, res) => {
-    const requestLocal = new RequestLocal(req.query);
-    const response = await requestLocal.stop();
+  irrigation: async (req, res) => {
+    const requestLocal = new RequestLocal(req.body);
+    const response = await requestLocal.irrigation();
 
     res.json(response);
   },
@@ -192,25 +186,11 @@ const requestLocalServer = {
       res.json(response);
     }
   },
-  easySelection: async (req, res) => {
-    const requestLocal = new RequestLocal();
-    const response = await requestLocal.easySelection();
+  controlMode: async (req, res) => {
+    const requestLocal = new RequestLocal(req.body);
+    const response = await requestLocal.controlMode();
 
-    if (fn.tokenIsReissuance(response)) {
-      res.redirect(fn.urlAndData(req));
-    } else {
-      res.json(response);
-    }
-  },
-  detailSelection: async (req, res) => {
-    const requestLocal = new RequestLocal();
-    const response = await requestLocal.detailSelection();
-
-    if (fn.tokenIsReissuance(response)) {
-      res.redirect(fn.urlAndData(req));
-    } else {
-      res.json(response);
-    }
+    res.json(response);
   },
   easySetting: async (req, res) => {
     const requestLocal = new RequestLocal(req.body);
@@ -280,6 +260,11 @@ const requestLocalServer = {
   yearConsumptionData: async (req, res) => {
     const requestLocal = new RequestLocal();
     const response = await requestLocal.yearConsumptionData();
+    res.json(response);
+  },
+  accumulateConsumptionData: async (req, res) => {
+    const requestLocal = new RequestLocal();
+    const response = await requestLocal.accumulateConsumptionData();
     res.json(response);
   },
   minutely: async (req, res) => {
