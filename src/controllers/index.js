@@ -170,6 +170,18 @@ const requestLocalServer = {
       res.json(response);
     }
   },
+  start: async (req, res) => {
+    const requestLocal = new RequestLocal();
+    const response = await requestLocal.start();
+
+    res.json(response);
+  },
+  stop: async (req, res) => {
+    const requestLocal = new RequestLocal();
+    const response = await requestLocal.stop();
+
+    res.json(response);
+  },
   irrigation: async (req, res) => {
     const requestLocal = new RequestLocal(req.body);
     const response = await requestLocal.irrigation();
@@ -186,11 +198,25 @@ const requestLocalServer = {
       res.json(response);
     }
   },
-  controlMode: async (req, res) => {
-    const requestLocal = new RequestLocal(req.body);
-    const response = await requestLocal.controlMode();
+  easySelection: async (req, res) => {
+    const requestLocal = new RequestLocal();
+    const response = await requestLocal.easySelection();
 
-    res.json(response);
+    if (fn.tokenIsReissuance(response)) {
+      res.redirect(fn.urlAndData(req));
+    } else {
+      res.json(response);
+    }
+  },
+  detailSelection: async (req, res) => {
+    const requestLocal = new RequestLocal();
+    const response = await requestLocal.detailSelection();
+
+    if (fn.tokenIsReissuance(response)) {
+      res.redirect(fn.urlAndData(req));
+    } else {
+      res.json(response);
+    }
   },
   easySetting: async (req, res) => {
     const requestLocal = new RequestLocal(req.body);

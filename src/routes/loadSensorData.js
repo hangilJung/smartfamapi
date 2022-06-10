@@ -6,7 +6,6 @@ const { ipAndUrl } = require("../lib/middleware");
 router.post("/", ipAndUrl, ctrl.requestLocalServer.loadSensorData);
 router.post("/minutes", ipAndUrl, ctrl.requestLocalServer.minutes);
 router.post("/hours", ipAndUrl, ctrl.requestLocalServer.hours);
-
 router.post(
   "/main-inside",
   ipAndUrl,

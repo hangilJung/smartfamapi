@@ -134,20 +134,20 @@ class RequestLocal {
     return this.#localServerAccess(url, this.body);
   }
 
-  async irrigation() {
-    const url = urlList.irrigation;
+  async start() {
+    const url = urlList.start;
+
+    return this.#localServerAccess(url, this.body);
+  }
+
+  async stop() {
+    const url = urlList.stop;
 
     return this.#localServerAccess(url, this.body);
   }
 
   async nutriculatureMachineStatus() {
     const url = urlList.nutricultureMachineStatus;
-
-    return this.#localServerAccess(url, this.body);
-  }
-
-  async controlMode() {
-    const url = urlList.controlMode;
 
     return this.#localServerAccess(url, this.body);
   }
