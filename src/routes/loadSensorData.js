@@ -42,7 +42,11 @@ router.post(
   ipAndUrl,
   ctrl.requestLocalServer.accumulateConsumptionData
 );
-
+router.post(
+  "/statistics-consum",
+  ipAndUrl,
+  ctrl.requestLocalServer.statisticsConsumptionData
+);
 router.post("/minutely", ipAndUrl, ctrl.requestLocalServer.minutely);
 router.post("/hourly", ipAndUrl, ctrl.requestLocalServer.hourly);
 router.post("/daily", ipAndUrl, ctrl.requestLocalServer.daily);

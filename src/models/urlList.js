@@ -34,6 +34,7 @@ const url = {
   monthConsumptionData: "/load-sensor-data/month-consum",
   yearConsumptionData: "/load-sensor-data/year-consum",
   accumulateConsumptionData: "/load-sensor-data/accum-consum",
+  statisticsConsumptionData: "/load-sensor-data/statistics-consum",
   sensorDataMinutely: "/load-sensor-data/minutely",
   sensorDataHourly: "/load-sensor-data/hourly",
   sensorDataDaily: "/load-sensor-data/daily",

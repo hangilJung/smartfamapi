@@ -293,6 +293,11 @@ const requestLocalServer = {
     const response = await requestLocal.accumulateConsumptionData();
     res.json(response);
   },
+  statisticsConsumptionData: async (req, res) => {
+    const requestLocal = new RequestLocal(req.body);
+    const response = await requestLocal.statisticsConsumptionData();
+    res.json(response);
+  },
   minutely: async (req, res) => {
     const requestLocal = new RequestLocal(req.body);
     const response = await requestLocal.sensorDataMinutely();
