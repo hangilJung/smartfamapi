@@ -29,4 +29,6 @@ router.post(
   ctrl.requestLocalServer.detailSettingTrayIsUse
 );
 
+router.post("/detail-setting", ctrl.requestLocalServer.detailSetting);
+
 module.exports = router;

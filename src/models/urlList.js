@@ -29,6 +29,7 @@ const url = {
   detailSettingMatter: "/operate-actuator/detail-setting-matter",
   detailSettingIsUse: "/operate-actuator/detail-setting-is-use",
   detailSettingTrayIsUse: "/operate-actuator/detail-setting-tray-is-use",
+  detailSetting: "/operate-actuator/detail-setting",
   hourConsumptionData: "/load-sensor-data/hour-consum",
   dayConsumptionData: "/load-sensor-data/day-consum",
   monthConsumptionData: "/load-sensor-data/month-consum",

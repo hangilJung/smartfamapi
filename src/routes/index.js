@@ -4,6 +4,7 @@ const ctrl = require("../controllers");
 const loadSensorData = require("./loadSensorData");
 const actuator = require("./actuator");
 const reRequest = require("./reRequest");
+
 const { ipAndUrl } = require("../lib/middleware");
 
 router.use("/load-sensor-data", loadSensorData);

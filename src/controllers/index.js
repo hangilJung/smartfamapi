@@ -268,6 +268,12 @@ const requestLocalServer = {
       res.json(response);
     }
   },
+  detailSetting: async (req, res) => {
+    const requestLocal = new RequestLocal(req.body);
+    const response = await requestLocal.detailSetting();
+
+    res.json(response);
+  },
   hourConsumptionData: async (req, res) => {
     const requestLocal = new RequestLocal();
     const response = await requestLocal.hourConsumptionData();
