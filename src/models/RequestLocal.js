@@ -1,5 +1,6 @@
 const urlList = require("./urlList");
 const requestWithTokenAndData = require("../utils/requestWithTokenAndData");
+const logger = require("../config/logger");
 
 class RequestLocal {
   constructor(body) {
@@ -12,6 +13,11 @@ class RequestLocal {
 
       return result.data;
     } catch (error) {
+      logger.error(
+        `src/models/RequestLocal.js function #localServerAccess() error : ${
+          error ?? "not load error contents"
+        }`
+      );
       return "WoW!!! It is Error!";
     }
   }
