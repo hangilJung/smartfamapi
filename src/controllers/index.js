@@ -268,9 +268,9 @@ const requestLocalServer = {
       res.json(response);
     }
   },
-  detailSetting: async (req, res) => {
+  detailSupplySetting: async (req, res) => {
     const requestLocal = new RequestLocal(req.body);
-    const response = await requestLocal.detailSetting();
+    const response = await requestLocal.detailSupplySetting();
 
     res.json(response);
   },
@@ -332,6 +332,11 @@ const requestLocalServer = {
     const requestLocal = new RequestLocal(req.body);
     const response = await requestLocal.sensorDataYearly();
 
+    res.json(response);
+  },
+  ecPhSetting: async (req, res) => {
+    const requestLocal = new RequestLocal(req.body);
+    const response = await requestLocal.ecPhSetting();
     res.json(response);
   },
 };

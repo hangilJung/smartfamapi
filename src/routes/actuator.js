@@ -28,7 +28,10 @@ router.post(
   "/detail-setting-tray-is-use",
   ctrl.requestLocalServer.detailSettingTrayIsUse
 );
-
-router.post("/detail-setting", ctrl.requestLocalServer.detailSetting);
+router.post(
+  "/detail-supply-setting",
+  ctrl.requestLocalServer.detailSupplySetting
+);
+router.post("/ec-ph-setting", ctrl.requestLocalServer.ecPhSetting);
 
 module.exports = router;

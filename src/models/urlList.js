@@ -29,7 +29,7 @@ const url = {
   detailSettingMatter: "/operate-actuator/detail-setting-matter",
   detailSettingIsUse: "/operate-actuator/detail-setting-is-use",
   detailSettingTrayIsUse: "/operate-actuator/detail-setting-tray-is-use",
-  detailSetting: "/operate-actuator/detail-setting",
+  detailSupplySetting: "/operate-actuator/detail-supply-setting",
   hourConsumptionData: "/load-sensor-data/hour-consum",
   dayConsumptionData: "/load-sensor-data/day-consum",
   monthConsumptionData: "/load-sensor-data/month-consum",
@@ -41,6 +41,7 @@ const url = {
   sensorDataDaily: "/load-sensor-data/daily",
   sensorDataMonthly: "/load-sensor-data/monthly",
   sensorDataYearly: "/load-sensor-data/yearly",
+  ecPhSetting: "/operate-actuator/ec-ph-setting",
 };
 
 module.exports = url;

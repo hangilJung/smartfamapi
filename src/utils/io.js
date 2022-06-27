@@ -103,6 +103,12 @@ module.exports = (server) => {
     socket.on("outsideSensorData", (data) => {
       nutricultureMachinePage.emit("outsideSensorData", data);
     });
+    socket.on("detailSupplySetting", (data) => {
+      nutricultureMachinePage.emit("detailSupplySetting", data);
+    });
+    socket.on("ecPhSetting", (data) => {
+      nutricultureMachinePage.emit("ecPhSetting", data);
+    });
 
     socket.on("disconnet", (reason) => {
       console.log(reason);

@@ -200,8 +200,8 @@ class RequestLocal {
     return this.#localServerAccess(url, this.body);
   }
 
-  async detailSetting() {
-    const url = urlList.detailSetting;
+  async detailSupplySetting() {
+    const url = urlList.detailSupplySetting;
 
     return this.#localServerAccess(url, this.body);
   }
@@ -268,6 +268,12 @@ class RequestLocal {
 
   async sensorDataYearly() {
     const url = urlList.sensorDataYearly;
+
+    return this.#localServerAccess(url, this.body);
+  }
+
+  async ecPhSetting() {
+    const url = urlList.ecPhSetting;
 
     return this.#localServerAccess(url, this.body);
   }
