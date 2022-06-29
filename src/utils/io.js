@@ -107,6 +107,7 @@ module.exports = (server) => {
       nutricultureMachinePage.emit("detailSupplySetting", data);
     });
     socket.on("ecPhSetting", (data) => {
+      console.log(data);
       nutricultureMachinePage.emit("ecPhSetting", data);
     });
 
@@ -128,6 +129,21 @@ module.exports = (server) => {
     socket.on("outsideSensorData", (data) => {
       console.log(data);
       mainSensorData.emit("outsideSensorData", data);
+    });
+
+    socket.on("consumptionHourData", (data) => {
+      console.log(data);
+      mainSensorData.emit("consumptionHourData", data);
+    });
+
+    socket.on("consumptionAccumulatedDayData", (data) => {
+      console.log(data);
+      mainSensorData.emit("consumptionAccumulatedDayData", data);
+    });
+
+    socket.on("bedData", (data) => {
+      console.log(data);
+      mainSensorData.emit("bedData", data);
     });
 
     socket.on("disconnet", (reason) => {
