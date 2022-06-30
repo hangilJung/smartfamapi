@@ -146,6 +146,11 @@ module.exports = (server) => {
       mainSensorData.emit("bedData", data);
     });
 
+    socket.on("actionRecord", (data) => {
+      console.log(data);
+      mainSensorData.emit("actionRecord", data);
+    });
+
     socket.on("disconnet", (reason) => {
       console.log(reason);
     });

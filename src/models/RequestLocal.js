@@ -277,6 +277,12 @@ class RequestLocal {
 
     return this.#localServerAccess(url, this.body);
   }
+
+  async detailSetting() {
+    const url = urlList.detailSetting;
+
+    return this.#localServerAccess(url, this.body);
+  }
 }
 
 module.exports = RequestLocal;

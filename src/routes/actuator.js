@@ -33,5 +33,6 @@ router.post(
   ctrl.requestLocalServer.detailSupplySetting
 );
 router.post("/ec-ph-setting", ctrl.requestLocalServer.ecPhSetting);
+router.post("/detail-setting", ctrl.requestLocalServer.detailSetting);
 
 module.exports = router;

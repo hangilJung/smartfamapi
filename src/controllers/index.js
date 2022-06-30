@@ -339,6 +339,11 @@ const requestLocalServer = {
     const response = await requestLocal.ecPhSetting();
     res.json(response);
   },
+  detailSetting: async (req, res) => {
+    const requestLocal = new RequestLocal(req.body);
+    const response = await requestLocal.detailSetting();
+    res.json(response);
+  },
 };
 
 const process = {
