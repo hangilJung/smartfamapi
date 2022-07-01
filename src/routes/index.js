@@ -21,5 +21,8 @@ router.post(
 router.post("/update", ipAndUrl, ctrl.requestLocalServer.update);
 
 router.post("/token-v1", ipAndUrl, ctrl.process.tokenV1);
+router.post("/test", (req, res) => {
+  console.log("test에 요청옴");
+});
 
 module.exports = router;

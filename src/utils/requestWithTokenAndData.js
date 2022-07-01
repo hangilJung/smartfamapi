@@ -9,17 +9,28 @@ const requestWithTokenAndData = async (url, body) => {
 
     isBlank(data);
 
-    const result = await axios.post(localServerHost + url, body, {
-      headers: {
-        authorization: data.accessToken,
+    const result = await axios.post(
+      localServerHost + url,
+      body,
+      {
+        headers: {
+          authorization: data.accessToken,
+        },
       },
-    });
+      { timeout: 7000 }
+    );
 
     return result;
   } catch (error) {
     console.log("catch문 작동");
-    const result = await aginRequestWithTokenAndData(url, body);
-    console.log(result);
+    if (error?.code === "ECONNABORTED") {
+      return {
+        header: {
+          resultCode: "04",
+          resultMsg: "TIME_OUT_ERROR",
+        },
+      };
+    }
     return result;
   }
 };
