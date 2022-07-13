@@ -43,6 +43,9 @@ const url = {
   sensorDataYearly: "/load-sensor-data/yearly",
   ecPhSetting: "/operate-actuator/ec-ph-setting",
   detailSetting: "/operate-actuator/detail-setting",
+  fanStatus: "/operate-actuator/fan-status",
+  setAction: "/set-action",
+  readAction: "/read-action",
 };
 
 module.exports = url;

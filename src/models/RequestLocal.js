@@ -10,7 +10,8 @@ class RequestLocal {
   async #localServerAccess(url, data) {
     try {
       const result = await requestWithTokenAndData(`${url}`, data);
-
+      console.log(result);
+      console.log("%#$$%%$");
       return result.data;
     } catch (error) {
       logger.error(
@@ -280,6 +281,24 @@ class RequestLocal {
 
   async detailSetting() {
     const url = urlList.detailSetting;
+
+    return this.#localServerAccess(url, this.body);
+  }
+
+  async fanStatus() {
+    const url = urlList.fanStatus;
+
+    return this.#localServerAccess(url, this.body);
+  }
+
+  async setAction() {
+    const url = urlList.setAction;
+
+    return this.#localServerAccess(url, this.body);
+  }
+
+  async readAction() {
+    const url = urlList.readAction;
 
     return this.#localServerAccess(url, this.body);
   }

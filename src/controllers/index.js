@@ -344,6 +344,21 @@ const requestLocalServer = {
     const response = await requestLocal.detailSetting();
     res.json(response);
   },
+  fanStatus: async (req, res) => {
+    const requestLocal = new RequestLocal(req.body);
+    const response = await requestLocal.fanStatus();
+    res.json(response);
+  },
+  setAction: async (req, res) => {
+    const requestLocal = new RequestLocal(req.body);
+    const response = await requestLocal.setAction();
+    res.json(response);
+  },
+  readAction: async (req, res) => {
+    const requestLocal = new RequestLocal();
+    const response = await requestLocal.readAction();
+    res.json(response);
+  },
 };
 
 const process = {

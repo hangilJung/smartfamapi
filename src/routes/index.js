@@ -24,5 +24,7 @@ router.post("/token-v1", ipAndUrl, ctrl.process.tokenV1);
 router.post("/test", (req, res) => {
   console.log("test에 요청옴");
 });
+router.post("/set-action", ipAndUrl, ctrl.requestLocalServer.setAction);
+router.post("/read-action", ipAndUrl, ctrl.requestLocalServer.readAction);
 
 module.exports = router;
