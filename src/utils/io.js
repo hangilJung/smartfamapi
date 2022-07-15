@@ -110,6 +110,10 @@ module.exports = (server) => {
       console.log(data);
       nutricultureMachinePage.emit("ecPhSetting", data);
     });
+    socket.on("nutrientStatus", (data) => {
+      console.log(data);
+      nutricultureMachinePage.emit("nutrientStatus", data);
+    });
 
     socket.on("disconnet", (reason) => {
       console.log(reason);
