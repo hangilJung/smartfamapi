@@ -369,6 +369,16 @@ const requestLocalServer = {
     const response = await requestLocal.dayMaxValue();
     res.json(response);
   },
+  setCondition: async (req, res) => {
+    const requestLocal = new RequestLocal(req.body);
+    const response = await requestLocal.setCondition();
+    res.json(response);
+  },
+  getCondition: async (req, res) => {
+    const requestLocal = new RequestLocal();
+    const response = await requestLocal.getCondition();
+    res.json(response);
+  },
 };
 
 const process = {

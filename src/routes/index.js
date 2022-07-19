@@ -26,5 +26,7 @@ router.post("/test", (req, res) => {
 });
 router.post("/set-action", ipAndUrl, ctrl.requestLocalServer.setAction);
 router.post("/read-action", ipAndUrl, ctrl.requestLocalServer.readAction);
+router.post("/set-condition", ipAndUrl, ctrl.requestLocalServer.setCondition);
+router.post("/get-condition", ipAndUrl, ctrl.requestLocalServer.getCondition);
 
 module.exports = router;

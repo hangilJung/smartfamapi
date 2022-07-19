@@ -48,6 +48,8 @@ const url = {
   setAction: "/set-action",
   readAction: "/read-action",
   dayMaxValue: "/load-sensor-data/day-max-value",
+  setCondition: "/set-condition",
+  getCondition: "/get-condition",
 };
 
 module.exports = url;

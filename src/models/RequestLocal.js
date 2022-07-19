@@ -314,6 +314,17 @@ class RequestLocal {
 
     return this.#localServerAccess(url, this.body);
   }
+
+  async setCondition() {
+    const url = urlList.setCondition;
+
+    return this.#localServerAccess(url, this.body);
+  }
+  async getCondition() {
+    const url = urlList.getCondition;
+
+    return this.#localServerAccess(url, this.body);
+  }
 }
 
 module.exports = RequestLocal;
