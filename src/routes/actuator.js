@@ -5,6 +5,7 @@ const { ipAndUrl } = require("../lib/middleware");
 
 router.post("/simple", ipAndUrl, ctrl.requestLocalServer.operateSimpleActuator);
 router.post("/fan-status", ipAndUrl, ctrl.requestLocalServer.fanStatus);
+router.post("/fan-status-gw", ipAndUrl, ctrl.requestLocalServer.fanStatusGw);
 router.post(
   "/nutrient",
   ipAndUrl,

@@ -44,8 +44,10 @@ const url = {
   ecPhSetting: "/operate-actuator/ec-ph-setting",
   detailSetting: "/operate-actuator/detail-setting",
   fanStatus: "/operate-actuator/fan-status",
+  fanStatusGw: "/operate-actuator/fan-status-gw",
   setAction: "/set-action",
   readAction: "/read-action",
+  dayMaxValue: "/load-sensor-data/day-max-value",
 };
 
 module.exports = url;

@@ -27,6 +27,7 @@ router.post(
   ipAndUrl,
   ctrl.requestLocalServer.dayConsumptionData
 );
+router.post("/day-max-value", ipAndUrl, ctrl.requestLocalServer.dayMaxValue);
 router.post(
   "/month-consum",
   ipAndUrl,

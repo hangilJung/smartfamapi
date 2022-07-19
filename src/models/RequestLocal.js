@@ -291,6 +291,12 @@ class RequestLocal {
     return this.#localServerAccess(url, this.body);
   }
 
+  async fanStatusGw() {
+    const url = urlList.fanStatusGw;
+
+    return this.#localServerAccess(url, this.body);
+  }
+
   async setAction() {
     const url = urlList.setAction;
 
@@ -299,6 +305,12 @@ class RequestLocal {
 
   async readAction() {
     const url = urlList.readAction;
+
+    return this.#localServerAccess(url, this.body);
+  }
+
+  async dayMaxValue() {
+    const url = urlList.dayMaxValue;
 
     return this.#localServerAccess(url, this.body);
   }

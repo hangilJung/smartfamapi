@@ -349,6 +349,11 @@ const requestLocalServer = {
     const response = await requestLocal.fanStatus();
     res.json(response);
   },
+  fanStatusGw: async (req, res) => {
+    const requestLocal = new RequestLocal(req.body);
+    const response = await requestLocal.fanStatusGw();
+    res.json(response);
+  },
   setAction: async (req, res) => {
     const requestLocal = new RequestLocal(req.body);
     const response = await requestLocal.setAction();
@@ -357,6 +362,11 @@ const requestLocalServer = {
   readAction: async (req, res) => {
     const requestLocal = new RequestLocal();
     const response = await requestLocal.readAction();
+    res.json(response);
+  },
+  dayMaxValue: async (req, res) => {
+    const requestLocal = new RequestLocal();
+    const response = await requestLocal.dayMaxValue();
     res.json(response);
   },
 };
